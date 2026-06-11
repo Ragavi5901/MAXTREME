@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-yellow: #facc15;
+  --color-brand-yellow-hover: #eab308;
+  --color-brand-dark: #1e293b;
+  --color-brand-darker: #0f172a;
+  --color-brand-light: #f8fafc;
+  --color-brand-gray: #64748b;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.2s ease-out forwards;
+  --animate-fade-in-left: fade-in-left 0.2s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-darker font-sans m-0 p-0 antialiased selection:bg-brand-yellow selection:text-brand-darker overflow-x-hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Premium dropdown styles */
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  min-width: 260px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-item:hover > .nav-dropdown-menu {
+  display: block;
+  animation: fade-in-up 0.2s ease-out forwards;
+}
+
+.nav-dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: -1px; /* Align perfectly with borders */
+  right: 100%; /* Fly to the left instead of right */
+  z-index: 50;
+  min-width: 260px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-subitem:hover > .nav-dropdown-submenu {
+  display: block;
+  animation: fade-in-left 0.2s ease-out forwards;
 }
