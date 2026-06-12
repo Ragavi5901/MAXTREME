@@ -19,13 +19,13 @@ const Hero = () => {
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20 text-xs font-bold tracking-widest uppercase mb-8">
-            <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-yellow/20 border border-brand-yellow/30 text-xs font-bold tracking-widest uppercase mb-8 text-white">
+            <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse shadow-[0_0_8px_rgba(248,113,113,0.8)]"></span>
             Engineering Excellence
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-8 leading-[1.1]">
-            Setting new standards in the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow to-yellow-200">industrial</span> sector.
+            Setting new standards in the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow to-red-400">industrial</span> sector.
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl font-light">
@@ -33,7 +33,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#products" className="inline-flex justify-center items-center px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-md text-brand-darker bg-brand-yellow hover:bg-brand-yellow-hover transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-0.5">
+            <a href="#products" className="inline-flex justify-center items-center px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-md text-white bg-brand-yellow hover:bg-brand-yellow-hover transition-all shadow-[0_0_20px_rgba(185,28,28,0.4)] hover:shadow-[0_0_30px_rgba(185,28,28,0.6)] hover:-translate-y-0.5">
               Explore Products
             </a>
             <a href="/contact" className="inline-flex justify-center items-center px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-md text-white bg-white/5 hover:bg-white/10 border border-white/20 transition-all backdrop-blur-md">
